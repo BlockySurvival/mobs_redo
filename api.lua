@@ -231,9 +231,9 @@ function mob_class:set_velocity(v)
 	local yaw = (self.object:get_yaw() or 0) + self.rotate
 
 	self.object:set_velocity({
-		x = (sin(yaw) * -v) + c_x,
-		y = self.object:get_velocity().y,
-		z = (cos(yaw) * v) + c_y
+		x = math.max(-10, math.min((sin(yaw) * -v) + c_x, 10)),
+		y = math.max(-10, math.min(self.object:get_velocity().y, 10)),
+		z = math.max(-10, math.min((cos(yaw) * v) + c_y, 10))
 	})
 end
 
