@@ -1,3 +1,4 @@
+[![](https://github.com/BlockySurvival/mobs_redo/workflows/Check%20&%20Release/badge.svg)](https://github.com/BlockySurvival/mobs_redo/actions)
 
 MOBS REDO for MINETEST
 
