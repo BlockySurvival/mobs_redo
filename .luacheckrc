@@ -1,6 +1,6 @@
 unused_args = false
 allow_defined_top = true
-max_line_length = 999
+max_line_length = false
 
 ignore = {
     "NS",
@@ -37,15 +37,16 @@ ignore = {
 
 globals = {
     "minetest", "mobs",
-    "default",
+    "default", "player_api"
 }
 
 read_globals = {
     string = {fields = {"split", "trim"}},
     table = {fields = {"copy", "getn"}},
 
-    "vector", "ItemStack", 
+    "vector", "ItemStack",
     "cmi", "tnt", "toolranks",
 
-    "intllib", "lucky_block", "invisibility",
+    "intllib", "lucky_block",
+    "invisibility", "pathfinder"
 }

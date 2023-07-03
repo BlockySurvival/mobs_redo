@@ -1,11 +1,11 @@
 on: [push, pull_request]
-name: Check & Release
+name: Build
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v3
       - name: lint
         uses: Roang-zero1/factorio-mod-luacheck@master
         with:
-          luacheckrc_url: https://raw.githubusercontent.com/BlockySurvival/mobs_redo/master/.luacheckrc
+          luacheckrc_url: ""

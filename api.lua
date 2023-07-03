@@ -60,7 +60,6 @@ local spawn_monster_protected = settings:get_bool("mobs_spawn_monster_protected"
 local remove_far = settings:get_bool("remove_far_mobs") ~= false
 local mob_area_spawn = settings:get_bool("mob_area_spawn")
 local difficulty = tonumber(settings:get("mob_difficulty")) or 1.0
-local show_health = settings:get_bool("mob_show_health") ~= false
 local max_per_block = tonumber(settings:get("max_objects_per_block") or 99)
 local mob_nospawn_range = tonumber(settings:get("mob_nospawn_range") or 12)
 local active_limit = tonumber(settings:get("mob_active_limit") or 0)
@@ -2843,7 +2842,6 @@ function mob_class:on_punch(hitter, tflp, tool_capabilities, dir, damage)
 	local punch_interval = 1.4
 
 	-- calculate mob damage
-	local damage = 0
 	local armor = self.object:get_armor_groups() or {}
 	local tmp
 
@@ -4029,7 +4027,7 @@ function mobs:spawn_specific(name, nodes, neighbors, min_light, max_light, inter
 			if on_spawn then
 				on_spawn(mob:get_luaentity(), pos)
 			end
-		else
+		else -- luacheck: ignore
 --print("--- not enough space to spawn", name)
 		end
 	end
